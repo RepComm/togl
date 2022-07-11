@@ -1,10 +1,6 @@
-
 import * as Vec2Func from "./functions/vec2func.js";
-
-export type Vec2Like = Array<number>;
-
-export class Vec2 extends Array<number> {
-  constructor(x: number = 0, y: number = x) {
+export class Vec2 extends Array {
+  constructor(x = 0, y = x) {
     super(x, y);
     return this;
   }
@@ -37,51 +33,45 @@ export class Vec2 extends Array<number> {
   }
 
   add(va, vb) {
-    if (vb) Vec2Func.add(this, va, vb);
-    else Vec2Func.add(this, this, va);
+    if (vb) Vec2Func.add(this, va, vb);else Vec2Func.add(this, this, va);
     return this;
   }
 
   sub(va, vb) {
-    if (vb) Vec2Func.subtract(this, va, vb);
-    else Vec2Func.subtract(this, this, va);
+    if (vb) Vec2Func.subtract(this, va, vb);else Vec2Func.subtract(this, this, va);
     return this;
   }
 
   multiply(v) {
-    if (v.length) Vec2Func.multiply(this, this, v);
-    else Vec2Func.scale(this, this, v);
+    if (v.length) Vec2Func.multiply(this, this, v);else Vec2Func.scale(this, this, v);
     return this;
   }
 
   divide(v) {
-    if (v.length) Vec2Func.divide(this, this, v);
-    else Vec2Func.scale(this, this, 1 / v);
+    if (v.length) Vec2Func.divide(this, this, v);else Vec2Func.scale(this, this, 1 / v);
     return this;
   }
 
   inverse(v = this) {
     Vec2Func.inverse(this, v);
     return this;
-  }
+  } // Can't use 'length' as Array.prototype uses it
 
-  // Can't use 'length' as Array.prototype uses it
+
   len() {
     return Vec2Func.length(this);
   }
 
   distance(v) {
-    if (v) return Vec2Func.distance(this, v);
-    else return Vec2Func.length(this);
+    if (v) return Vec2Func.distance(this, v);else return Vec2Func.length(this);
   }
 
   squaredLen() {
     return this.squaredDistance();
   }
 
-  squaredDistance(v?: Vec2Like) {
-    if (v) return Vec2Func.squaredDistance(this, v);
-    else return Vec2Func.squaredLength(this);
+  squaredDistance(v) {
+    if (v) return Vec2Func.squaredDistance(this, v);else return Vec2Func.squaredLength(this);
   }
 
   negate(v = this) {
@@ -142,4 +132,5 @@ export class Vec2 extends Array<number> {
     a[o + 1] = this[1];
     return a;
   }
+
 }

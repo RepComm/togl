@@ -1,19 +1,8 @@
 
-import { EXPONENT_CSS_BODY_STYLES, EXPONENT_CSS_STYLES, Panel, Text } from "@repcomm/exponent-ts"
+export * from "./core/renderer.js";
+export * from "./math/vec3.js";
+export * from "./math/functions/vec3func.js";
+export * from "./math/mat3.js";
+export * from "./math/mat4.js";
+export * from "./math/quat.js";
 
-EXPONENT_CSS_STYLES.mount(document.head);
-EXPONENT_CSS_BODY_STYLES.mount(document.head);
-
-async function main () {
-  
-  const container = new Panel()
-  .setId("container")
-  .mount(document.body);
-
-  const title = new Text()
-  .setTextContent("Hello World")
-  .mount(container);
-  
-}
-
-main();

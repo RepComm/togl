@@ -30,8 +30,5 @@
     "build": "babel src --extensions .ts --copy-files -d . && npm run build-types",
     "build-types": "npx tsc --project tsconfig.json",
     "publish": "npm publish --access public"
-  },
-  "dependencies": {
-    "@repcomm/exponent-ts": "^1.1.9"
   }
 }

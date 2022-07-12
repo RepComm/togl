@@ -2,6 +2,8 @@
 /**
  * Original code from https://github.com/oframe/ogl
  * Refactored by Jon: https://github.com/RepComm/togl
+ * 
+ * FINISHED
  */
 
 import { Vec3 } from "../math/vec3.js";

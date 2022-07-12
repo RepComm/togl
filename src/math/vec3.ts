@@ -6,6 +6,8 @@ import type { Quat } from "./quat.js";
 
 export type Vec3Like = Array<number>;
 
+export type Vec3Order = 'XYZ'|'YXZ'|'ZXY'|'ZYX'|'YZX'|'XZY';
+
 export class Vec3 extends Array<number> {
   
   constructor(x: number = 0, y: number = x, z: number = x) {

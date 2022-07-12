@@ -1,10 +1,9 @@
 
 import { Mat3Like } from "../mat3.js";
 import type { QuatLike } from "../quat.js";
-import type { Vec3Like } from "../vec3.js";
-import * as vec4 from "./vec4func.js";
+import type { Vec3Like, Vec3Order } from "../vec3.js";
 
-export type Vec3Order = 'XYZ'|'YXZ'|'ZXY'|'ZYX'|'YZX'|'XZY';
+import * as vec4 from "./vec4func.js";
 
 /**
  * Set a quat to the identity quaternion

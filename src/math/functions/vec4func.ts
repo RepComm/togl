@@ -1,12 +1,14 @@
 
+import { Vec4Like } from "../vec4.js";
+
 /**
  * Copy the values from one vec4 to another
  *
- * @param {vec4} out the receiving vector
- * @param {vec4} a the source vector
- * @returns {vec4} out
+ * @param {Vec4Like} out the receiving vector
+ * @param {Vec4Like} a the source vector
+ * @returns {Vec4Like} out
  */
-export function copy(out, a) {
+export function copy(out: Vec4Like, a: Vec4Like): Vec4Like {
     out[0] = a[0];
     out[1] = a[1];
     out[2] = a[2];
@@ -17,14 +19,14 @@ export function copy(out, a) {
 /**
  * Set the components of a vec4 to the given values
  *
- * @param {vec4} out the receiving vector
- * @param {Number} x X component
- * @param {Number} y Y component
- * @param {Number} z Z component
- * @param {Number} w W component
- * @returns {vec4} out
+ * @param {Vec4Like} out the receiving vector
+ * @param {number} x X component
+ * @param {number} y Y component
+ * @param {number} z Z component
+ * @param {number} w W component
+ * @returns {Vec4Like} out
  */
-export function set(out, x, y, z, w) {
+export function set(out: Vec4Like, x: number, y: number, z: number, w: number): Vec4Like {
     out[0] = x;
     out[1] = y;
     out[2] = z;
@@ -35,12 +37,12 @@ export function set(out, x, y, z, w) {
 /**
  * Adds two vec4's
  *
- * @param {vec4} out the receiving vector
- * @param {vec4} a the first operand
- * @param {vec4} b the second operand
- * @returns {vec4} out
+ * @param {Vec4Like} out the receiving vector
+ * @param {Vec4Like} a the first operand
+ * @param {Vec4Like} b the second operand
+ * @returns {Vec4Like} out
  */
-export function add(out, a, b) {
+export function add(out: Vec4Like, a: Vec4Like, b: Vec4Like): Vec4Like {
     out[0] = a[0] + b[0];
     out[1] = a[1] + b[1];
     out[2] = a[2] + b[2];
@@ -51,12 +53,12 @@ export function add(out, a, b) {
 /**
  * Scales a vec4 by a scalar number
  *
- * @param {vec4} out the receiving vector
- * @param {vec4} a the vector to scale
- * @param {Number} b amount to scale the vector by
- * @returns {vec4} out
+ * @param {Vec4Like} out the receiving vector
+ * @param {Vec4Like} a the vector to scale
+ * @param {number} b amount to scale the vector by
+ * @returns {Vec4Like} out
  */
-export function scale(out, a, b) {
+export function scale(out: Vec4Like, a: Vec4Like, b: number): Vec4Like {
     out[0] = a[0] * b;
     out[1] = a[1] * b;
     out[2] = a[2] * b;
@@ -67,10 +69,10 @@ export function scale(out, a, b) {
 /**
  * Calculates the length of a vec4
  *
- * @param {vec4} a vector to calculate length of
- * @returns {Number} length of a
+ * @param {Vec4Like} a vector to calculate length of
+ * @returns {number} length of a
  */
-export function length(a) {
+export function length(a: Vec4Like): number {
     let x = a[0];
     let y = a[1];
     let z = a[2];
@@ -81,11 +83,11 @@ export function length(a) {
 /**
  * Normalize a vec4
  *
- * @param {vec4} out the receiving vector
- * @param {vec4} a vector to normalize
- * @returns {vec4} out
+ * @param {Vec4Like} out the receiving vector
+ * @param {Vec4Like} a vector to normalize
+ * @returns {Vec4Like} out
  */
-export function normalize(out, a) {
+export function normalize(out: Vec4Like, a: Vec4Like): Vec4Like {
     let x = a[0];
     let y = a[1];
     let z = a[2];
@@ -104,24 +106,24 @@ export function normalize(out, a) {
 /**
  * Calculates the dot product of two vec4's
  *
- * @param {vec4} a the first operand
- * @param {vec4} b the second operand
- * @returns {Number} dot product of a and b
+ * @param {Vec4Like} a the first operand
+ * @param {Vec4Like} b the second operand
+ * @returns {number} dot product of a and b
  */
-export function dot(a, b) {
+export function dot(a: Vec4Like, b: Vec4Like): number {
     return a[0] * b[0] + a[1] * b[1] + a[2] * b[2] + a[3] * b[3];
 }
 
 /**
  * Performs a linear interpolation between two vec4's
  *
- * @param {vec4} out the receiving vector
- * @param {vec4} a the first operand
- * @param {vec4} b the second operand
- * @param {Number} t interpolation amount between the two inputs
- * @returns {vec4} out
+ * @param {Vec4Like} out the receiving vector
+ * @param {Vec4Like} a the first operand
+ * @param {Vec4Like} b the second operand
+ * @param {number} t interpolation amount between the two inputs
+ * @returns {Vec4Like} out
  */
-export function lerp(out, a, b, t) {
+export function lerp(out: Vec4Like, a: Vec4Like, b: Vec4Like, t: number): Vec4Like {
     let ax = a[0];
     let ay = a[1];
     let az = a[2];
